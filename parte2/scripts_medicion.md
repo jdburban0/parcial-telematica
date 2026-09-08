@@ -1,10 +1,6 @@
-#!/bin/bash
 # Script de medicion para la Parte 2: Evaluacion de mod_deflate y mod_brotli
-# Ejecutar este script desde una terminal para automatizar la recoleccion de datos de curl
 
 URL="http://parcial.empresa.local/lorem.txt"
-
-echo "=== MEDIDAS PARA LOREM.TXT ==="
 
 echo "1. Linea base (Sin comprimir - identity):"
 curl -s -H 'Accept-Encoding: identity' -o /dev/null -w 'tamano=%{size_download}B tiempo=%{time_total}s\n' $URL
